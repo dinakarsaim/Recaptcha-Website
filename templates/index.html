@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReCaptcha Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="overall">
+        <div class="container">
+            <div class="heading">
+                <!-- <p>Select all images with a bus</p> -->
+                <label for="objectDropdown">Select Object to Detect :</label>
+                <select id="objectDropdown">
+                    <option value="all">All Objects</option>
+                    <option value="bus">bus</option>
+                    <option value="motorcycle">motorcycle</option>
+                    <option value="traffic light">traffic light</option>
+                </select>
+            </div>
+            <div class="grid">
+                <!-- Upload Slots -->
+                <div class="upload-box" onclick="document.getElementById('imageInput1').click()">
+                    <p>Upload Image 1</p>
+                    <input type="file" id="imageInput1" accept="image/*" onchange="previewImage(1)">
+                    <img id="preview1" class="image-preview">
+                    <div id="loader1" class="loader"></div>
+                </div>
+                <div class="upload-box" onclick="document.getElementById('imageInput2').click()">
+                    <p>Upload Image 2</p>
+                    <input type="file" id="imageInput2" accept="image/*" onchange="previewImage(2)">
+                    <img id="preview2" class="image-preview">
+                    <div id="loader2" class="loader"></div>
+                </div>
+                <div class="upload-box" onclick="document.getElementById('imageInput3').click()">
+                    <p>Upload Image 3</p>
+                    <input type="file" id="imageInput3" accept="image/*" onchange="previewImage(3)">
+                    <img id="preview3" class="image-preview">
+                    <div id="loader3" class="loader"></div>
+                </div>
+                <div class="upload-box" onclick="document.getElementById('imageInput4').click()">
+                    <p>Upload Image 4</p>
+                    <input type="file" id="imageInput4" accept="image/*" onchange="previewImage(4)">
+                    <img id="preview4" class="image-preview">
+                    <div id="loader4" class="loader"></div>
+                </div>
+            </div>
+
+            <br>
+            <i class="fas fa-sync-alt" id="reload-btn"></i>
+            <button class="button-style" style="background-color: #4b90e2; color: white;" onclick="uploadImages()">Detect Objects</button>
+        </div>
+
+        <div class = "container2" id = "resultContainer">
+            <div class="heading" id="resultContainer">
+                <p>Detection Results</p>
+            </div>    
+            <div class="grid">
+                <img id="resultImage1" class="image-result">
+                <img id="resultImage2" class="image-result">
+                <img id="resultImage3" class="image-result">
+                <img id="resultImage4" class="image-result">
+            </div>
+            <div class="reload-div">
+                <i class="fas fa-sync-alt" id="reload-btn2"></i>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
